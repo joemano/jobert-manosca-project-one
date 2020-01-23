@@ -93,6 +93,11 @@ img {
     margin: 0 auto;
 }
 
+.gallery,
+.bio {
+    background: #F8F8F8;
+}
+
 .link-button {
     background: #FDC800;
     padding: 15px 30px;
@@ -190,7 +195,7 @@ h2 {
 }
 
 .helpful-links a{
-    color: #f8f8f8;
+    color: #F8F8F8;
     padding: 20px;
 }
 
@@ -203,8 +208,13 @@ h2 {
     font-size: 3rem;
 }
 
+.gallery {
+    padding: 75px 0;
+}
+
 .image-holder {
-    width: calc(100%/3 - 2%);
+    display: inline-block;
+    width: calc(100%/3 - 3%);
     margin: 1%;
 }
 
