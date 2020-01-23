@@ -86,6 +86,7 @@ a {
 img {
     max-width: 100%;
     height: 100%;
+    display: block;
 }
 
 .container {
@@ -218,8 +219,53 @@ h2 {
     margin: 1%;
 }
 
-.half {
+.tips-text,
+.recipes-text {
     width: 50%;
+    max-width: 300px;
+    padding-top: 75px;
+}
+
+.tips-text {
+    float: right;
+    margin-right: 10%;
+}
+
+.right { float: right; }
+
+.recipes { clear: both; }
+
+.recipes-text {
+    float: left;
+    margin-left: 10%;
+}
+
+.left { float: left; }
+
+.half { width: 50%; }
+
+.bio {
+    clear: both;
+    padding: 75px 0;
+}
+
+.bio-text,
+.portrait {
+    display: inline-block;
+}
+
+.portrait {
+    width: calc(25% - 4%);
+    margin: 2%
+}
+
+.portrait img{
+    border-radius: 50%;
+}
+
+.bio-text {
+    text-align: left;
+    width: 74%;
 }
 
 /* FOOTER */
@@ -231,5 +277,10 @@ footer {
 
 footer a {
     color: #F8F8F8;
+}
+
+.copyright {
+    background: #000;
+    color: #EAEDF4;
 }
 /* MEDIA QUERIES */
