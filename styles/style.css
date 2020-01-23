@@ -56,6 +56,7 @@ body {
     font-size: 1.8rem;
     background: #EAEDF4;
     color: #232323;
+    /* line height breaks the dynamic height of my content */
     /* line-height: 2.9rem; */
     text-align: center;
 }
@@ -105,7 +106,6 @@ a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    /* font-size: 2rem; */
     color: #232323;
     display: inline-block;
 }
@@ -117,7 +117,7 @@ img {
 }
 
 .container {
-    /* width: 80%; */
+    width: 80%;
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -247,9 +247,13 @@ h2 {
 
 .tips-text,
 .recipes-text {
-    width: 50%;
+    /* width: 100%; */
     max-width: 300px;
     padding-top: 75px;
+}
+
+.tips-text-holder {
+    float: left;
 }
 
 .tips-text {
@@ -257,7 +261,8 @@ h2 {
     margin-right: 10%;
 }
 
-.right { float: right; }
+.right,
+.recipes-text-holder { float: right; }
 
 .recipes { clear: both; }
 
@@ -268,6 +273,8 @@ h2 {
 
 .left { float: left; }
 
+.tips-text-holder,
+.recipes-text-holder,
 .half { 
     width: 50%; 
 }
@@ -282,13 +289,10 @@ h2 {
     padding: 75px 0;
 }
 
-.bio-text,
-.portrait {
-    display: inline-block;
-}
-
 .portrait {
     width: calc(25% - 4%);
+    min-width: 190px;
+    float: left;
     margin: 2%
 }
 
@@ -298,15 +302,15 @@ h2 {
 
 .bio-text {
     text-align: left;
-    width: 74%;
 }
 
 /* FOOTER */
 
 footer {
+    clear: both;
     background: #232323;
     color: #F8F8F8;
-    padding: 75px 0;
+    padding: 75px 30px;
     text-align: left;
 }
 
@@ -331,7 +335,8 @@ footer nav,
 .contact-box,
 footer nav,
 .recent-posts {
-    width: calc(50%/3);
+    width: calc(50%/3 - 2%);
+    margin: 0 1%;
 }
 
 .recent-posts a {
@@ -381,13 +386,96 @@ footer nav,
 
 /* MEDIA QUERIES */
 
+/* Small Desktop */
+@media (max-width: 1280px) {
+    .container {
+        width: 90%;
+    }
+
+    .sm-links {
+        top: 100%;
+        transform: translateY(50%);
+    }
+
+    footer nav {
+        width: calc(50%/5);
+    }
+
+    .recent-posts {
+        width: 19%;
+    }
+
+    .subscription {
+        float: right;
+    }
+
+    .subscription button {
+        padding: 11px 0;
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets */
+
 @media (max-width: 940px) {
 
 }
 
-/* Tablets */
+/* Landscapes */
 @media (max-width: 768px) {
-    
+    .container,
+    .tips-text-holder,
+    .recipes-text-holder {
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    header nav ul {
+        display: none;;
+    }
+
+    .helpful-links {
+        padding: 25px;
+    }
+
+    .icon {
+        width: 100%;
+        margin: 0;
+    }
+
+    .gallery {
+        font-size: 0;
+    }
+
+    .gallery,
+    .image-holder {
+        padding: 0;
+        margin: 0;
+    }
+
+    .image-holder {
+        width: 50%;
+    }
+
+    .gallery li:last-child {
+        display: none;
+    }
+
+    .tips-text, .recipes-text {
+        clear: both;
+        float: none;
+        max-width: none;
+        margin: 0;
+        padding: 50px;
+    }
+
+    .half {
+        float: none;
+        width: 100%;
+    }
 }
 
 /* Phone size */
