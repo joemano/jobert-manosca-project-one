@@ -38,8 +38,12 @@ body {
     font-size: 1.8rem;
     background: #EAEDF4;
     color: #232323;
-    line-height: 2.9rem;
+    /* line-height: 2.9rem; */
     text-align: center;
+}
+
+p {
+    line-height: 2.9rem;
 }
 
 h1, h2, h3, h4, ul {
@@ -47,18 +51,34 @@ h1, h2, h3, h4, ul {
     padding: 0;
 }
 
-h2, em, .logo{
+h2 span, h3, h4 {
+    text-transform: uppercase;
+}
+
+h3, .welcome {
+    font-size: 3.2rem;
+}
+
+.about h3, .bio-text h3 {
+    text-transform: none;
+    font-size: 4.2rem;
+    font-weight: 400;
+}
+
+.about h3,
+.bio-text h3,
+h2,
+.logo {
     font-family: 'Great Vibes', cursive;
 }
 
-ul {
-    list-style: none;
-}
+ul { list-style: none; }
 
 a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+    /* font-size: 2rem; */
     color: #232323;
     display: inline-block;
 }
@@ -83,13 +103,86 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    position: relative;
 }
 
-header em {
-    font-size: 4.2rem;
+header nav {
+    width: 100%;
+}
+
+.logo {
+    text-transform: none;
+    float: left;
+    font-weight: 400;
+    font-size: 3.2rem;
+}
+
+h1 { font-weight: 400; }
+
+header nav ul {
+    margin-top: 15px;
+    float: right;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav a {
+    padding: 15px;
+}
+
+.welcome {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    display: block;
+}
+
+.header-text {
+    clear: both;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.sm-links {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sm-links a{
+    padding: 10px;
+    color: #FDC800;
+}
+
+h2 {
+    text-transform: none;
+    /* display: block; */
+    font-size: 14rem;
+    font-weight: 400;
+    margin-top: 5px;
 }
 
 /* MAIN */
+
+.about {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.image-holder {
+    width: calc(100%/3 - 2%);
+    margin: 1%;
+}
+
+.half {
+    width: 50%;
+}
 
 /* FOOTER */
 
