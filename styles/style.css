@@ -43,6 +43,7 @@ body {
 }
 
 p {
+    font-size: 1.6rem;
     line-height: 2.9rem;
 }
 
@@ -53,6 +54,11 @@ h1, h2, h3, h4, ul {
 
 h2 span, h3, h4 {
     text-transform: uppercase;
+}
+
+h4 {
+    font-size: 2rem;
+    margin-bottom: 5px;
 }
 
 h3, .welcome {
@@ -273,14 +279,75 @@ h2 {
 footer {
     background: #232323;
     color: #F8F8F8;
+    padding: 75px 0;
+    text-align: left;
+}
+
+footer p, .copyright p {
+    margin: 0;
 }
 
 footer a {
     color: #F8F8F8;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 3px 0;
+}
+
+.contact-box,
+footer nav,
+.recent-posts,
+.subscription {
+    float: left;
+}
+
+.contact-box,
+footer nav,
+.recent-posts {
+    width: calc(50%/3);
+}
+
+.recent-posts a {
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.subscription {
+    width: 50%;
+}
+
+.subscription form {
+    margin-top: 5px;
+    width: 100%;
+    font-size: 0;
+}
+
+.subscription input, 
+.subscription button {
+    font-size: 1.8rem;
+}
+
+.subscription input {
+    padding: 10px 20px;
+    width: 75%;
+}
+
+.subscription button {
+    border: none;
+    background: #FDC800;
+    color: #232323;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+    width: 25%;
 }
 
 .copyright {
+    clear: both;
     background: #000;
     color: #EAEDF4;
+    text-align: center;
+    padding: 5px 0;
 }
 /* MEDIA QUERIES */
