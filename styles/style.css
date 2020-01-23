@@ -95,6 +95,8 @@ img {
 
 .link-button {
     background: #FDC800;
+    padding: 15px 30px;
+    margin-top: 15px;
 }
 
 /* HEADER */
@@ -113,7 +115,6 @@ header nav {
 .logo {
     text-transform: none;
     float: left;
-    font-weight: 400;
     font-size: 3.2rem;
 }
 
@@ -124,7 +125,8 @@ header nav ul {
     float: right;
 }
 
-header nav ul li {
+header nav ul li,
+.helpful-links li {
     display: inline-block;
 }
 
@@ -143,8 +145,11 @@ header nav a {
     position: absolute;
     width: 100%;
     height: auto;
+
+    /* this combo is the only way I know to center vertically without flex */
     top: 50%;
     transform: translateY(-50%);
+    
     text-align: center;
 }
 
@@ -171,8 +176,31 @@ h2 {
 /* MAIN */
 
 .about {
-    width: 80%;
-    margin: 0 auto;
+    width: 60%;
+    margin: 100px auto;
+}
+
+.helpful-links {
+    background: #232323;
+    padding: 75px 0;
+}
+
+.icon {
+    margin: 0 4%;
+}
+
+.helpful-links a{
+    color: #f8f8f8;
+    padding: 20px;
+}
+
+.fa-utensils,
+.fa-book-open,
+.fa-envelope {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 15px;
+    font-size: 3rem;
 }
 
 .image-holder {
@@ -187,7 +215,11 @@ h2 {
 /* FOOTER */
 
 footer {
+    background: #232323;
     color: #F8F8F8;
 }
 
+footer a {
+    color: #F8F8F8;
+}
 /* MEDIA QUERIES */
