@@ -1,17 +1,16 @@
 /*  
 
 Author: Jobert Manosca
-Course: Intro to Web Development Continuing Education Summer 2019
+Course: Winter 1 Bootcamp 2020
 Instructor: Colin D'Amelio
 Date: January 27, 2020
 
 Notes:
 
 - Redundant classes?
-- Code not dry.
-- Improper hierarchy. (h3 above h2 in html)
+- Code probably not dry.
 - No favicons used
-- Not responsive
+- No media query for 480px
 - Not pixel perfect match to design
 - No bonuses attempted
 
@@ -100,19 +99,28 @@ h2,
     font-family: 'Great Vibes', cursive;
 }
 
-ul { list-style: none; }
+ul { 
+    list-style: none; 
+
+    /* Gets rid of white space */
+    font-size: 0;
+}
 
 a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 1.8rem;
     color: #232323;
     display: inline-block;
 }
 
 img {
     max-width: 100%;
-    height: 100%;
+    /* I'm pretty sure the best practice is to set the height of the image to be 100% of its parent container but it does what it wants in Chrome. Height auto seems to work for both browsers though. */
+    /* height: 100%; */
+    height: auto;
+    object-fit: cover;
     display: block;
 }
 
@@ -127,10 +135,19 @@ img {
     background: #F8F8F8;
 }
 
+.link-button,
+header nav ul {
+    margin-top: 15px;
+}
+
 .link-button {
     background: #FDC800;
     padding: 15px 30px;
-    margin-top: 15px;
+}
+
+.link-button:hover, .link-button:focus {
+    background: #232323;
+    color: #F8F8F8;
 }
 
 /* HEADER */
@@ -168,8 +185,9 @@ input[type="checkbox"] {
 }
 
 header nav ul {
-    margin-top: 15px;
+    padding-top: 10px;
     float: right;
+    width: auto;
 }
 
 header nav ul li,
@@ -178,7 +196,12 @@ header nav ul li,
 }
 
 header nav a {
-    padding: 15px;
+    padding: 10px 15px;
+    border-bottom: 2px transparent solid;
+}
+
+header nav a:hover, header nav a:focus {
+    border-bottom: 2px #232323 solid;
 }
 
 .welcome {
@@ -207,9 +230,13 @@ header nav a {
     transform: translateY(-50%);
 }
 
-.sm-links a{
+.sm-links a {
     padding: 10px;
     color: #FDC800;
+}
+
+.sm-links a:hover, .sm-links a:focus {
+    color: #232323;
 }
 
 h2 {
@@ -240,6 +267,10 @@ h2 {
     padding: 20px;
 }
 
+.helpful-links a:hover, .helpful-links a:focus{
+    color: #FDC800;
+}
+
 .fa-utensils,
 .fa-book-open,
 .fa-envelope {
@@ -254,9 +285,14 @@ h2 {
 }
 
 .image-holder {
-    display: inline-block;
-    width: calc(100%/3 - 3%);
+    width: calc(100%/3 - 2%);
     margin: 1%;
+
+    float: left;
+}
+
+.tips-n-recipes {
+    clear: both;
 }
 
 .tips-text,
@@ -295,7 +331,6 @@ h2 {
 
 .half img {
     min-height: 375px;
-    object-fit: cover;
 }
 
 .bio {
@@ -332,11 +367,19 @@ footer p, .copyright p {
     margin: 0;
 }
 
+footer ul {
+    font-size: 1.8rem;
+}
+
 footer a {
     color: #F8F8F8;
     font-size: 1.6rem;
     font-weight: 400;
     padding: 3px 0;
+}
+
+footer a:hover, footer a:focus {
+    color: #FDC800;
 }
 
 .contact-box,
@@ -376,7 +419,6 @@ footer nav,
 .subscription button {
     font-size: 1.8rem;
 }
-
 .subscription input {
     border: none;
     padding: 10px 20px;
@@ -392,6 +434,11 @@ footer nav,
     text-transform: uppercase;
     padding: 10px 0;
     width: 25%;
+}
+
+.subscription button:hover, .subscription button:focus {
+    background: #ee0000;
+    color: #F8F8F8;
 }
 
 .copyright {
@@ -476,7 +523,13 @@ footer nav,
     .recipes-text-holder,
     .contact-box,
     footer nav,
-    .recent-posts {
+    .recent-posts,
+    .about,
+    .icon,
+    .half,
+    .bio-text,
+    .subscription input,
+    .subscription button {
         width: 100%;
     }
 
@@ -487,8 +540,6 @@ footer nav,
     .about {
         padding: 25px;
         margin: 0;
-
-        width: 100%;
     }
 
     .helpful-links {
@@ -496,7 +547,6 @@ footer nav,
     }
 
     .icon {
-        width: 100%;
         margin: 0;
     }
 
@@ -528,7 +578,6 @@ footer nav,
 
     .half {
         float: none;
-        width: 100%;
     }
 
     .bio {
@@ -542,7 +591,6 @@ footer nav,
     }
 
     .bio-text {
-        width: 100%;
         text-align: center;
     }
     
@@ -562,11 +610,6 @@ footer nav,
         margin-top: 50px;
     }
     
-    .subscription input,
-    .subscription button{
-        width: 100%; 
-    }
-
     .subscription input {
         text-align: center;
     }
@@ -609,9 +652,4 @@ footer nav,
     .recent-posts {
         display: none;
     }
-}
-
-/* Phone size */
-@media (max-width: 480px) {
-    
 }
