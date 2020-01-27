@@ -10,7 +10,6 @@ Notes:
 - Redundant classes?
 - Code probably not dry.
 - No favicons used
-- No media query for 480px
 - Not pixel perfect match to design
 - No bonuses attempted
 
@@ -244,6 +243,21 @@ h2 {
     font-size: 14rem;
     font-weight: 400;
     margin-top: 5px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: #FDC800;
+    color: #232323;
+    border: 2px #232323 solid;
+}
+
+.skip-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* MAIN */
@@ -651,5 +665,16 @@ footer nav,
 
     .recent-posts {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 9rem;
     }
 }
